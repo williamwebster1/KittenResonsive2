@@ -1,0 +1,115 @@
+body {
+	width: 100%;
+	height: 100%;
+	display: block;
+	margin: 0;
+}
+
+.half_page {
+	height: 50%;
+	width: 100%;
+}
+
+/* only use this method to set an image's source will be CHANGING */
+.kitten {content: url("images/kitten-large.png");}
+
+@media only screen and (max-width: 650px) {
+	.kitten{
+		opacity: 0;
+	}
+	.toast{
+		content: url("images/kitten-medium.png");
+	}
+	body { 
+		background-color: purple;
+	}
+}
+
+/*Changes kitten image on top to not be viewable while adding kitten img to the bottom half page. Also makes dispay side to side*/
+@media only screen and (max-width: 500px) {
+	.kitten {
+		opacity: 0;
+	}
+	.toast{
+			content: url("images/kitten-small.png");
+	}
+	body { 
+		background-color: black;
+		display: flex;
+	}
+}
+
+/* Changes images to gifs and makes their opacity viewable, as well as changes display to up and down*/
+@media only screen and (max-width: 300px) {
+	.kitten {
+		content: url("images/kittyloaf.gif");
+		opacity: 1;
+	}
+	.toast {
+		content: url("images/kittyloaf.gif");
+		opacity: 1;
+	}
+	body { 
+		background-color: green;
+		display:block;
+	}
+}
+
+/*changes top img background pink*/
+@media only screen and (max-width: 200px) {
+	.kitten {
+		content: url("images/kittyloaf.gif");
+		background-color: pink;
+	}
+	.toast {
+		content: url("images/kittyloaf.gif");
+		
+	}
+}
+
+/*changes bottom img background pink*/
+@media only screen and (max-width: 150px) {
+	.kitten {
+		content: url("images/kittyloaf.gif");
+
+	}
+	.toast {
+		content: url("images/kittyloaf.gif");
+		background-color: pink;
+	}
+
+}
+
+/* Changes whole background when screen is width=100px */
+@media only screen and (max-width: 100px) {
+	.kitten {
+		content: url("images/kittyloaf.gif");
+
+	}
+	.toast {
+		content: url("images/kittyloaf.gif");
+		background-color: pink;
+	}
+	body{
+		background-color:pink;
+	}
+}
+
+
+
+
+
+/* Use this class on the PARENT of the <img> you are trying to center */
+/* REMEMBER: the PARENT element tells the CHILD element(s) what to do! */
+/* NOTE: Centering images in DIVs only works when the display property is "flex"! */
+.center-img {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Use this class on any <img> you want to prevent from overflowing it's parent <div>! */
+.contain-img {
+	max-height: 100%;
+	max-width: 100%;
+}
